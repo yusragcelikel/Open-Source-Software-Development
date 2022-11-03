@@ -16,15 +16,15 @@ class Hello(Resource):
 
 
 # bir sayının küpünü hesaplamak için başka bir kaynak
-class Square(Resource):
+class Cube(Resource):
 
     def get(self, num):
-        return jsonify({'square': num ** 3})
+        return jsonify({'cube': num ** 3})
 
 
 # karşılık gelen url'leriyle birlikte kaynakları ekleme
 api.add_resource(Hello, '/')
-api.add_resource(Square, '/square/<int:num>') #/square/<intiger numara girilir>
+api.add_resource(Cube, '/cube/<int:num>') #/cube/<intiger numara girilir>
 
 if __name__ == '__main__':
     app.run(debug=True)
