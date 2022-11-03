@@ -15,16 +15,16 @@ class Hello(Resource):
         return jsonify({'data': data}), 201
 
 
-# bir sayının karesini hesaplamak için başka bir kaynak
+# bir sayının küpünü hesaplamak için başka bir kaynak
 class Square(Resource):
 
     def get(self, num):
-        return jsonify({'square': num ** 2})
+        return jsonify({'square': num ** 3})
 
 
 # karşılık gelen url'leriyle birlikte kaynakları ekleme
 api.add_resource(Hello, '/')
-api.add_resource(Square, '/square/<int:num>')
+api.add_resource(Square, '/square/<int:num>') #/square/<intiger numara girilir>
 
 if __name__ == '__main__':
     app.run(debug=True)
